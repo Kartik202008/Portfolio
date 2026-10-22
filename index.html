@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Kartik Goyal — Portfolio &amp; AI Developer</title>
+  <meta name="description" content="Portfolio of Kartik Goyal, Full-Stack &amp; AI Developer building resilient backend systems, automated real-time alert pipelines, and applied AI tools that hold up in production.">
+  <meta name="keywords" content="Kartik Goyal, Full-Stack Developer, AI Engineer, React, Next.js, Node.js, WhatsApp Automation, Software Engineer, Gurugram, Bareilly, India">
+  <meta name="author" content="Kartik Goyal">
+
+  <!-- Google Structured Data (JSON-LD) for Search Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kartik Goyal",
+    "jobTitle": "Full-Stack & AI Developer",
+    "email": "mailto:goyalkartik208@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gurugram",
+      "addressCountry": "India"
+    }
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kartik Goyal — Full-Stack &amp; AI Developer">
+  <meta property="og:description" content="Full-stack engineer building AI retrieval and agent systems that hold up in production.">
+  <meta property="og:site_name" content="Kartik Goyal Portfolio">
+  <meta name="theme-color" content="#F7F5EE" id="meta-theme-color">
+
+  <!-- Fonts: Space Grotesk + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="grid-canvas">
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header & Sticky Top Bar -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <!-- Monogram Logo [AK] matching reference -->
+      <a href="#hero" class="brand-monogram" aria-label="Kartik Goyal Portfolio Home">
+        <span class="monogram-box">KG</span>
+      </a>
+
+      <!-- Desktop Navigation Links matching screenshot -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Work</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Utilities -->
+      <div class="header-actions">
+        <!-- Live Time & Status Pill -->
+        <div class="live-status-pill" id="live-status" title="Local Time in Bareilly, India">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+          <span class="status-time" id="local-time-display">--:-- IST</span>
+        </div>
+
+        <!-- Audio Micro-haptics Toggle -->
+        <button id="sound-toggle" class="icon-btn" aria-label="Toggle subtle audio clicks" title="Audio Clicks: ON">
+          <svg class="icon-speaker" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path class="sound-wave" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path class="sound-wave" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </button>
+
+        <!-- Theme Toggle (Sun/Moon Circle) -->
+        <button id="theme-toggle" class="icon-btn theme-toggle-btn" aria-label="Toggle Cream Canvas and Dark Mode" title="Toggle Theme">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Resume Download Pill matching screenshot: "Résumé PDF ↓" -->
+        <a href="resume.pdf" download="Kartik_Goyal_Resume_2026.pdf" id="resume-download-btn" class="resume-pill-btn">
+          <span>Résumé PDF</span>
+          <span class="download-arrow">↓</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-nav-inner container">
+        <div class="mobile-status-strip font-mono">
+          <span class="status-pulse-dot"></span>
+          <span>Gurugram, INDIA</span>
+        </div>
+        <ul class="mobile-nav-links">
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+          <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+          <li><a href="#projects" class="mobile-nav-link">Work (2026 Projects)</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+          <a href="resume.pdf" download="Kartik_Goyal_Resume_2026.pdf" class="btn btn-primary w-full">
+            <span>Download Résumé PDF ↓</span>
+          </a>
+          <button id="mobile-resume-preview-btn" class="btn btn-outline w-full mt-2">
+            View Résumé Online
+          </button>
+          <div class="mobile-socials">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-chip">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-chip">LinkedIn</a>
+            <button class="social-chip copy-email-btn" data-email="goyalkartik208@gmail.com">Copy goyalkartik208@gmail.com</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section (Pixel-Perfect match to reference screenshot) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-layout-grid">
+          <div class="hero-main-content">
+            <!-- Eyebrow: Location with extending horizontal line -->
+            <div class="hero-location-bar">
+              <span class="location-text font-mono">Gurugram, INDIA</span>
+              <span class="location-line" aria-hidden="true"></span>
+            </div>
+
+            <!-- Giant Stacked Name: Kartik Goyal -->
+            <h1 class="hero-giant-title">
+              <span class="title-line">Kartik</span>
+              <span class="title-line">Goyal</span>
+            </h1>
+
+            <!-- Headline Statement -->
+            <p class="hero-statement">
+              Full-stack engineer building <strong class="statement-highlight">AI retrieval and agent systems</strong> that hold up in production.
+            </p>
+
+            <!-- Subtitle Bio -->
+            <p class="hero-bio">
+              Passionate engineer specializing in backend systems, automated real-time alerts, AI-driven tools, and mobile-responsive web applications.
+            </p>
+
+            <!-- Hero Actions matching screenshot -->
+            <div class="hero-action-bar">
+              <!-- "See the work →" button with yellow arrow circle -->
+              <a href="#projects" class="btn-see-work">
+                <span class="btn-text">See the work</span>
+                <span class="arrow-circle" aria-hidden="true">→</span>
+              </a>
+
+              <!-- Fun version pill badge -->
+              <div class="fun-version-pill" id="fun-mode-trigger" role="button" tabindex="0" title="Click to trigger interactive developer easter egg!">
+                <span class="yellow-pulse-dot" aria-hidden="true"></span>
+                <span class="fun-text">There's a far more fun version of this</span>
+                <span class="rec-badge font-mono">highly recommended</span>
+              </div>
+
+              <!-- Quick Copy Email Button -->
+              <button class="btn-copy-email copy-email-btn font-mono" data-email="goyalkartik208@gmail.com" title="Copy email address">
+                <span>📋 goyalkartik208@gmail.com</span>
+                <span class="copy-tag">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Realistic 3D/2D Hanging ID Card Animation -->
+          <div class="hero-id-card-wrapper" id="id-card-interactive-wrapper" aria-label="Interactive Developer ID Pass">
+            <!-- Lanyard Strap with realistic fabric stitch and metallic swivel clip -->
+            <div class="lanyard-rig">
+              <div class="lanyard-ribbon">
+                <span class="lanyard-text font-mono">KARTIK GOYAL · FULL-STACK · AI DEVELOPER · 2026 PASS</span>
+              </div>
+              <div class="lanyard-clip">
+                <div class="clip-loop"></div>
+                <div class="clip-spring"></div>
+                <div class="clip-hook"></div>
+              </div>
+            </div>
+
+            <!-- Hanging ID Badge -->
+            <div class="id-badge-card neo-card" id="id-badge-card" tabindex="0">
+              <!-- Punch Slot with metal reinforcement -->
+              <div class="id-badge-slot">
+                <div class="slot-hole"></div>
+              </div>
+
+              <!-- 3D Holographic Glare Sheen -->
+              <div class="id-badge-glare" id="id-badge-glare"></div>
+
+              <!-- Top Header Strip -->
+              <div class="id-badge-header">
+                <div class="id-badge-brand">
+                  <span class="badge-logo-box">KG</span>
+                  <div class="badge-brand-text">
+                    <span class="badge-brand-title font-mono">DEVELOPER PASS</span>
+                    <span class="badge-brand-sub font-mono">ALL ACCESS · 2026</span>
+                  </div>
+                </div>
+                <div class="badge-chip-status font-mono">
+                  <span class="status-pulse-dot"></span> ACTIVE
+                </div>
+              </div>
+
+              <!-- Profile Photo Container -->
+              <div class="id-badge-photo-wrapper">
+                <img src="avatar.jpg" alt="Kartik Goyal" class="id-badge-photo" onerror="this.onerror=null; this.src='pfp/main.jpeg';">
+                <div class="photo-overlay-corner top-left"></div>
+                <div class="photo-overlay-corner top-right"></div>
+                <div class="photo-overlay-corner bottom-left"></div>
+                <div class="photo-overlay-corner bottom-right"></div>
+                <span class="photo-tag font-mono">PASS_ID // #8842</span>
+              </div>
+
+              <!-- Identity Details -->
+              <div class="id-badge-identity">
+                <h3 class="id-badge-name">Kartik Goyal</h3>
+                <div class="id-badge-role font-mono">Full-Stack &amp; AI Developer</div>
+                
+                <div class="id-badge-meta font-mono">
+                  <div class="meta-row">
+                    <span class="meta-label">LOCATION:</span>
+                    <span class="meta-val">GURUGRAM, IN</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="meta-label">FOCUS:</span>
+                    <span class="meta-val">BACKEND &amp; AI AGENTS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Minimalist Barcode & QR Graphic at bottom -->
+              <div class="id-badge-bottom">
+                <div class="barcode-container">
+                  <svg class="barcode-svg" viewBox="0 0 135 28" preserveAspectRatio="none" aria-hidden="true">
+                    <rect x="0" y="0" width="3" height="28" fill="currentColor"/>
+                    <rect x="5" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="9" y="0" width="4" height="28" fill="currentColor"/>
+                    <rect x="15" y="0" width="2" height="28" fill="currentColor"/>
+                    <rect x="19" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="23" y="0" width="3.5" height="28" fill="currentColor"/>
+                    <rect x="29" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="33" y="0" width="5" height="28" fill="currentColor"/>
+                    <rect x="40" y="0" width="2" height="28" fill="currentColor"/>
+                    <rect x="44" y="0" width="3" height="28" fill="currentColor"/>
+                    <rect x="49" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="53" y="0" width="4" height="28" fill="currentColor"/>
+                    <rect x="59" y="0" width="2" height="28" fill="currentColor"/>
+                    <rect x="63" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="67" y="0" width="5" height="28" fill="currentColor"/>
+                    <rect x="74" y="0" width="2.5" height="28" fill="currentColor"/>
+                    <rect x="79" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="83" y="0" width="3.5" height="28" fill="currentColor"/>
+                    <rect x="89" y="0" width="2" height="28" fill="currentColor"/>
+                    <rect x="93" y="0" width="4" height="28" fill="currentColor"/>
+                    <rect x="99" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="103" y="0" width="3" height="28" fill="currentColor"/>
+                    <rect x="108" y="0" width="5" height="28" fill="currentColor"/>
+                    <rect x="115" y="0" width="2" height="28" fill="currentColor"/>
+                    <rect x="119" y="0" width="3" height="28" fill="currentColor"/>
+                    <rect x="124" y="0" width="1.5" height="28" fill="currentColor"/>
+                    <rect x="128" y="0" width="4" height="28" fill="currentColor"/>
+                    <rect x="133" y="0" width="2" height="28" fill="currentColor"/>
+                  </svg>
+                  <span class="barcode-num font-mono">KG-2026-AI-8842</span>
+                </div>
+
+                <!-- Mini QR / NFC Stamp -->
+                <div class="qr-stamp-box font-mono" title="Scan Pass">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="2" width="7" height="7" rx="1"></rect>
+                    <rect x="15" y="2" width="7" height="7" rx="1"></rect>
+                    <rect x="2" y="15" width="7" height="7" rx="1"></rect>
+                    <rect x="4.5" y="4.5" width="2" height="2" fill="currentColor"></rect>
+                    <rect x="17.5" y="4.5" width="2" height="2" fill="currentColor"></rect>
+                    <rect x="4.5" y="17.5" width="2" height="2" fill="currentColor"></rect>
+                    <path d="M15 15h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM19 15h2v2h-2z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Holographic Authenticity Seal -->
+              <div class="id-badge-seal font-mono">
+                <span>★ VERIFIED DEV PASS ★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Metrics Strip -->
+        <div class="hero-specs-strip">
+          <div class="spec-stat-item">
+            <span class="spec-stat-num">03</span>
+            <span class="spec-stat-desc font-mono">2026 Production Ships</span>
+          </div>
+          <div class="spec-stat-item">
+            <span class="spec-stat-num">&lt; 2m</span>
+            <span class="spec-stat-desc font-mono">MedAlert Async SLA</span>
+          </div>
+          <div class="spec-stat-item">
+            <span class="spec-stat-num">30%</span>
+            <span class="spec-stat-desc font-mono">SocietyPool Max Savings</span>
+          </div>
+          <div class="spec-stat-item">
+            <span class="spec-stat-num">100%</span>
+            <span class="spec-stat-desc font-mono">Mobile-First Fluidity</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag font-mono">// 01. ABOUT &amp; PHILOSOPHY</div>
+          <h2 class="section-title">Engineering with Zero Fluff</h2>
+          <p class="section-subtitle">
+            I build software designed to survive actual production traffic: clean relational contracts, robust async event queues, and deterministic AI agents that deliver immediate business value.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="pillar-card neo-card">
+            <div class="pillar-number font-mono">01 / RELIABILITY</div>
+            <div class="pillar-icon">⚡</div>
+            <h3 class="pillar-title">Resilient Backend Systems</h3>
+            <p class="pillar-desc">
+              Designing scalable Node.js and Express RESTful architectures, PostgreSQL and MongoDB schemas, and stateless token session validation with defensive error boundaries.
+            </p>
+            <div class="pillar-tags font-mono">
+              <span>Node.js</span> · <span>Express</span> · <span>MongoDB</span> · <span>Postgres</span>
+            </div>
+          </div>
+
+          <div class="pillar-card neo-card">
+            <div class="pillar-number font-mono">02 / AUTOMATION</div>
+            <div class="pillar-icon">⏰</div>
+            <h3 class="pillar-title">Real-Time Alert Workflows</h3>
+            <p class="pillar-desc">
+              Architecting asynchronous timer triggers and two-way WhatsApp/Twilio webhooks, ensuring time-critical escalations fire within strict multi-tier SLAs.
+            </p>
+            <div class="pillar-tags font-mono">
+              <span>Async Timers</span> · <span>WhatsApp Cloud API</span> · <span>Twilio</span>
+            </div>
+          </div>
+
+          <div class="pillar-card neo-card">
+            <div class="pillar-number font-mono">03 / APPLIED AI</div>
+            <div class="pillar-icon">🧠</div>
+            <h3 class="pillar-title">AI Retrieval &amp; Agents</h3>
+            <p class="pillar-desc">
+              Integrating OpenAI API models with structured JSON schemas, retrieval pipelines, and dynamic algorithmic scoring that turn complex calculations into effortless user experiences.
+            </p>
+            <div class="pillar-tags font-mono">
+              <span>OpenAI API</span> · <span>Dynamic Pricing</span> · <span>Next.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section section-padding" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag font-mono">// 02. TECHNICAL ARSENAL</div>
+          <h2 class="section-title">Toolbox &amp; Proficiencies</h2>
+          <p class="section-subtitle">
+            A production-proven technology stack selected for rapid iteration, strict type safety, and high-concurrency throughput.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. Languages / Frontend -->
+          <div class="skill-category-card neo-card">
+            <div class="category-header">
+              <span class="cat-icon">🌐</span>
+              <div>
+                <h3 class="category-title">Languages / Frontend</h3>
+                <span class="category-count font-mono">5 Technologies</span>
+              </div>
+            </div>
+            <div class="skills-chips-list">
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">JavaScript</span>
+                <span class="chip-level font-mono">ES2026</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">TypeScript</span>
+                <span class="chip-level font-mono">Strict</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">React</span>
+                <span class="chip-level font-mono">v19</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Next.js</span>
+                <span class="chip-level font-mono">App Router</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Tailwind CSS</span>
+                <span class="chip-level font-mono">Utility</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Backend & Database -->
+          <div class="skill-category-card neo-card">
+            <div class="category-header">
+              <span class="cat-icon">⚙️</span>
+              <div>
+                <h3 class="category-title">Backend &amp; Database</h3>
+                <span class="category-count font-mono">4 Technologies</span>
+              </div>
+            </div>
+            <div class="skills-chips-list">
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Node.js</span>
+                <span class="chip-level font-mono">Event Loop</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Express.js</span>
+                <span class="chip-level font-mono">REST</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">MongoDB</span>
+                <span class="chip-level font-mono">Aggregation</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">PostgreSQL</span>
+                <span class="chip-level font-mono">SQL / ACID</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. APIs & AI -->
+          <div class="skill-category-card neo-card">
+            <div class="category-header">
+              <span class="cat-icon">🤖</span>
+              <div>
+                <h3 class="category-title">APIs &amp; AI</h3>
+                <span class="category-count font-mono">3 Core Domains</span>
+              </div>
+            </div>
+            <div class="skills-chips-list">
+              <div class="skill-chip highlight-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">OpenAI API</span>
+                <span class="chip-level font-mono">JSON Mode</span>
+              </div>
+              <div class="skill-chip highlight-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Twilio / WhatsApp API</span>
+                <span class="chip-level font-mono">Webhooks</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">RESTful Architecture</span>
+                <span class="chip-level font-mono">Microservices</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Tools & Deployment -->
+          <div class="skill-category-card neo-card">
+            <div class="category-header">
+              <span class="cat-icon">🛠️</span>
+              <div>
+                <h3 class="category-title">Tools &amp; Deployment</h3>
+                <span class="category-count font-mono">CI/CD &amp; DevOps</span>
+              </div>
+            </div>
+            <div class="skills-chips-list">
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Git</span>
+                <span class="chip-level font-mono">Version Ctrl</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">GitHub</span>
+                <span class="chip-level font-mono">Workflows</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Vercel / Netlify</span>
+                <span class="chip-level font-mono">Edge Deploy</span>
+              </div>
+              <div class="skill-chip">
+                <span class="chip-dot"></span>
+                <span class="chip-name">Postman</span>
+                <span class="chip-level font-mono">API Testing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section section-padding" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag font-mono">// 03. ENGINEERING TIMELINE</div>
+          <h2 class="section-title">Experience &amp; Delivery</h2>
+          <p class="section-subtitle">
+            Track record of shipping production software, leading hackathon-winning architectures, and optimizing full-stack applications.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item neo-card">
+            <div class="timeline-meta">
+              <span class="timeline-year font-mono">2026 — PRESENT</span>
+              <span class="badge-accent font-mono">ACTIVE DEPLOYMENTS</span>
+            </div>
+            <h3 class="timeline-role">Full-Stack &amp; AI Engineer</h3>
+            <p class="timeline-company">Independent Software Engineering &amp; Client Deployments</p>
+            <p class="timeline-body">
+              Architecting full-stack web applications, custom async alert engines, and AI-enabled community platforms. Focused on high mobile responsiveness, Twilio/WhatsApp webhook pipelines, and atomic database consistency.
+            </p>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item neo-card">
+            <div class="timeline-meta">
+              <span class="timeline-year font-mono">2026 HACKATHON</span>
+              <span class="badge-gold font-mono">Active Deployment</span>
+            </div>
+            <h3 class="timeline-role">Lead Architect &amp; Developer — SocietyPool</h3>
+            <p class="timeline-company">Smart Communities Hackathon 2026</p>
+            <p class="timeline-body">
+              Engineered dynamic tier-based step-pricing algorithms and an OpenAI-powered AI Society Copilot for instant WhatsApp announcements, taking home the top hackathon honors.
+            </p>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item neo-card">
+            <div class="timeline-meta">
+              <span class="timeline-year font-mono">2026 — 2030</span>
+              <span class="timeline-tag font-mono">ACADEMIC EXCELLENCE</span>
+            </div>
+            <h3 class="timeline-role">B.E. in Computer Science &amp; Engineering</h3>
+            <p class="timeline-company">First Class with Distinction</p>
+            <p class="timeline-body">
+              Specialized in Distributed Systems, Data Structures &amp; Algorithms, Relational Database Management, and Network Protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section (Exact 3 Projects built in 2026) -->
+    <section class="projects-section section-padding" id="projects">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <div class="section-tag font-mono">// 04. FEATURED 2026 PROJECTS</div>
+            <h2 class="section-title">Selected Work</h2>
+            <p class="section-subtitle">
+              Three production-grade applications engineered in 2026 with full mobile fluidity, interactive simulators, and clean code.
+            </p>
+          </div>
+          <div class="project-counter-badge font-mono">
+            3 OF 3 SHIPPED
+          </div>
+        </div>
+
+        <div class="projects-list">
+          
+          <!-- PROJECT 1: Full-Stack E-Commerce Platform -->
+          <article class="project-card neo-card" id="project-ecommerce">
+            <div class="project-card-grid">
+              <!-- Visual Mockup Column -->
+              <div class="project-visual-col">
+                <div class="project-visual-frame">
+                  <div class="visual-top-bar">
+                    <span class="bar-pill">STOREFRONT v1.4</span>
+                    <span class="bar-status font-mono">CART: READY</span>
+                  </div>
+                  <div class="ecommerce-mockup-inner">
+                    <div class="mockup-header-row">
+                      <div class="mockup-logo">🛒 ApexSupply</div>
+                      <div class="mockup-cart-badge font-mono">Items (2) · $189.00</div>
+                    </div>
+                    <div class="mockup-product-tiles">
+                      <div class="product-mini-tile">
+                        <div class="product-thumb">⌨️</div>
+                        <div class="product-meta">
+                          <span class="p-name">Mechanical Deck</span>
+                          <span class="p-price font-mono">$129.00</span>
+                        </div>
+                      </div>
+                      <div class="product-mini-tile">
+                        <div class="product-thumb">🎧</div>
+                        <div class="product-meta">
+                          <span class="p-name">Studio Monitor</span>
+                          <span class="p-price font-mono">$60.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mockup-checkout-bar">
+                      <span class="checkout-step active">1. Cart</span>
+                      <span class="checkout-step active">2. Auth</span>
+                      <span class="checkout-step">3. Pay</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Information Column -->
+              <div class="project-content-col">
+                <div class="project-meta-top">
+                  <span class="project-date-badge font-mono">01 / 2026 · Full-Stack Web</span>
+                  <span class="project-type-tag">E-Commerce</span>
+                </div>
+
+                <h3 class="project-title">Full-Stack E-Commerce Platform</h3>
+
+                <p class="project-description">
+                  Fully functional digital storefront featuring dynamic cart management, state handling, secure user authentication, and seamless checkout flows.
+                </p>
+
+                <div class="project-key-features">
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Dynamic reactive cart state with persistent localStorage &amp; session syncing</span>
+                  </div>
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Secure JWT token auth with role-based access control and bcrypt hashing</span>
+                  </div>
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>RESTful inventory endpoint handling atomic quantity decrements</span>
+                  </div>
+                </div>
+
+                <!-- Exact Tech Stack Chips -->
+                <div class="tech-stack-group" aria-label="Tech Stack">
+                  <span class="tech-chip">React</span>
+                  <span class="tech-chip">Node.js</span>
+                  <span class="tech-chip">Express</span>
+                  <span class="tech-chip">MongoDB</span>
+                  <span class="tech-chip">Tailwind CSS</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary btn-sm open-demo-btn" data-demo="ecommerce">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <span>Test Live Cart Demo</span>
+                  </button>
+
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: MedAlert -->
+          <article class="project-card neo-card" id="project-medalert">
+            <div class="project-card-grid">
+              <!-- Visual Mockup Column -->
+              <div class="project-visual-col">
+                <div class="project-visual-frame visual-medalert">
+                  <div class="visual-top-bar alert-bar">
+                    <span class="bar-pill pulse-red font-mono">🚨 REAL-TIME MONITOR</span>
+                    <span class="bar-status font-mono">TIMER_ID: #ML-8842</span>
+                  </div>
+                  <div class="medalert-mockup-inner">
+                    <div class="timer-display-box">
+                      <span class="timer-tag font-mono">SAFETY WINDOW COUNTDOWN</span>
+                      <div class="timer-digits font-mono" id="medalert-live-ticker">01:42</div>
+                      <div class="timer-progress-track">
+                        <div class="timer-progress-bar" style="width: 72%;"></div>
+                      </div>
+                    </div>
+                    <div class="alert-simulation-bubble">
+                      <div class="bubble-sender font-mono">
+                        <span class="wa-icon">💬</span> WhatsApp Caretaker Escalation
+                      </div>
+                      <div class="bubble-text">
+                        "ALERT: Dose not confirmed within 2 minutes. Caretaker alerted via priority WhatsApp notification."
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Information Column -->
+              <div class="project-content-col">
+                <div class="project-meta-top">
+                  <span class="project-date-badge font-mono">02 / 2026 · Healthcare &amp; Automation</span>
+                  <span class="project-type-tag tag-urgent font-mono">Async Alert System</span>
+                </div>
+
+                <h3 class="project-title">MedAlert</h3>
+
+                <p class="project-description">
+                  Automated medication reminder system featuring custom async timer triggers and WhatsApp caretaker escalation if medicine isn't logged within 2 minutes.
+                </p>
+
+                <div class="project-key-features">
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Custom asynchronous timer scheduler handling non-blocking concurrent patient queues</span>
+                  </div>
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Twilio WhatsApp API integration with two-way patient response webhook parsing</span>
+                  </div>
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Automated fallback phone notification and caretaker escalation pipeline if missed</span>
+                  </div>
+                </div>
+
+                <!-- Exact Tech Stack Chips -->
+                <div class="tech-stack-group" aria-label="Tech Stack">
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Node.js</span>
+                  <span class="tech-chip">WhatsApp API</span>
+                  <span class="tech-chip">Twilio</span>
+                  <span class="tech-chip">Async Timers</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary btn-sm open-demo-btn" data-demo="medalert">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <span>Simulate 2-Min Escalation</span>
+                  </button>
+
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: SocietyPool -->
+          <article class="project-card neo-card" id="project-societypool">
+            <div class="project-card-grid">
+              <!-- Visual Mockup Column -->
+              <div class="project-visual-col">
+                <div class="project-visual-frame visual-societypool">
+                  <div class="visual-top-bar hackathon-bar">
+                    <span class="bar-pill badge-gold font-mono">🏆 HACKATHON FEATURED</span>
+                    <span class="bar-status font-mono">POOL: 74% UNLOCKED</span>
+                  </div>
+                  <div class="societypool-mockup-inner">
+                    <div class="pool-tier-box">
+                      <div class="tier-head">
+                        <span class="tier-name">Batch: Organic Mango Crates</span>
+                        <span class="tier-price font-mono">₹420 <s class="original-price">₹600</s></span>
+                      </div>
+                      <div class="tier-meter">
+                        <div class="tier-segment active">Tier 1 (-10%)</div>
+                        <div class="tier-segment active">Tier 2 (-20%)</div>
+                        <div class="tier-segment current">Tier 3 (-30%)</div>
+                      </div>
+                    </div>
+                    <div class="ai-copilot-pill">
+                      <div class="ai-tag font-mono"><span class="sparkle">✨</span> AI Society Copilot:</div>
+                      <p class="ai-quote">
+                        "Drafted WhatsApp announcement for Palm Grove Society: 3 slots remaining to unlock max 30% discount!"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Information Column -->
+              <div class="project-content-col">
+                <div class="project-meta-top">
+                  <span class="project-date-badge font-mono">03 / 2026 · AI &amp; Smart Communities</span>
+                  <span class="award-chip font-mono">🏆 Hackathon Featured Project</span>
+                </div>
+
+                <h3 class="project-title">SocietyPool</h3>
+
+                <p class="project-description">
+                  Hyperlocal group-buying web platform utilizing dynamic tier-based pricing algorithms and an AI Society Copilot for instant booking drafts and WhatsApp announcements.
+                </p>
+
+                <div class="project-key-features">
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Dynamic step-function price reduction algorithm adapting live to community order volume</span>
+                  </div>
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>OpenAI API integration generating persuasive neighborhood group chat announcements</span>
+                  </div>
+                  <div class="feature-item">
+                    <span class="feat-bullet">▪</span>
+                    <span>Automated WhatsApp payment verification &amp; slot booking confirmations</span>
+                  </div>
+                </div>
+
+                <!-- Exact Tech Stack Chips -->
+                <div class="tech-stack-group" aria-label="Tech Stack">
+                  <span class="tech-chip">Next.js</span>
+                  <span class="tech-chip">OpenAI API</span>
+                  <span class="tech-chip">Node.js</span>
+                  <span class="tech-chip">WhatsApp Automation</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary btn-sm open-demo-btn" data-demo="societypool">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <span>Test Tier Pricing &amp; AI Copilot</span>
+                  </button>
+
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="contact-card neo-card">
+          <div class="contact-grid">
+            <!-- Left Info Column -->
+            <div class="contact-info-col">
+              <div class="section-tag font-mono">// 05. GET IN TOUCH</div>
+              <h2 class="contact-headline">Let's build something.</h2>
+              <p class="contact-lead">
+                Have an ambitious product, an AI agent to deploy, or a real-time alert architecture to build? My inbox is always open for contracts and high-impact engineering roles.
+              </p>
+
+              <div class="contact-channels">
+                <div class="channel-card">
+                  <div class="channel-icon">✉️</div>
+                  <div class="channel-content">
+                    <span class="channel-label font-mono">DIRECT INBOX</span>
+                    <a href="mailto:goyalkartik208@gmail.com" class="channel-value">goyalkartik208@gmail.com</a>
+                  </div>
+                  <button class="channel-action-btn copy-email-btn" data-email="goyalkartik208@gmail.com" title="Copy email">
+                    📋
+                  </button>
+                </div>
+
+                <div class="channel-card">
+                  <div class="channel-icon">📍</div>
+                  <div class="channel-content">
+                    <span class="channel-label font-mono">LOCATION</span>
+                    <span class="channel-value">Gurugram, India</span>
+                  </div>
+                </div>
+
+                <div class="channel-card">
+                  <div class="channel-icon">⚡</div>
+                  <div class="channel-content">
+                    <span class="channel-label font-mono">RESPONSE TIME</span>
+                    <span class="channel-value">&lt; 12 Hours SLA Guarantee</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links-row">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                  <span>LinkedIn</span>
+                </a>
+                <a href="resume.pdf" download="Kartik_Goyal_Resume_2026.pdf" class="social-btn">
+                  <span>Résumé PDF ↓</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Interactive Form Column -->
+            <div class="contact-form-col">
+              <form class="contact-form" id="contact-form" novalidate>
+                <div class="form-header">
+                  <h3 class="form-title">Send a Direct Transmission</h3>
+                  <span class="form-meta font-mono">~12h response</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-name" class="form-label font-mono">01 / YOUR NAME *</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Jordan Hayes" required autocomplete="name">
+                  <span class="field-error" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label font-mono">02 / YOUR EMAIL *</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="jordan@company.com" required autocomplete="email">
+                  <span class="field-error" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-scope" class="form-label font-mono">03 / PROJECT TYPE</label>
+                  <select id="contact-scope" name="scope" class="form-select">
+                    <option value="fullstack">Full-Stack Web App (React / Node / Next.js)</option>
+                    <option value="alert_system">Real-Time Alert / WhatsApp Automation</option>
+                    <option value="ai_tool">AI Integration &amp; Copilot Agents</option>
+                    <option value="contract">Contract Engineering / Advisory</option>
+                    <option value="fulltime">Full-Time Engineering Role</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div class="label-row">
+                    <label for="contact-message" class="form-label font-mono">04 / YOUR MESSAGE *</label>
+                    <span class="char-counter font-mono" id="char-counter">0 / 500</span>
+                  </div>
+                  <textarea id="contact-message" name="message" class="form-textarea" rows="4" maxlength="500" placeholder="Tell me about your product requirements, timeline, or engineering goals..." required></textarea>
+                  <span class="field-error" id="message-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-full form-submit-btn" id="contact-submit-btn">
+                  <span>Transmit Message</span>
+                  <span class="arrow-sym">→</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="monogram-box-sm">KG</span>
+          <span class="footer-tagline">Kartik Goyal · Full-Stack &amp; AI Developer</span>
+        </div>
+        <p class="footer-copy font-mono">
+          © 2026 Kartik Goyal. Inspired by modern minimalist cream grid aesthetics. Built with Space Grotesk and zero unnecessary libraries.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top-btn font-mono" id="back-to-top" aria-label="Back to top">
+          <span>Back to Top ↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- MODAL 1: E-COMMERCE CART SIMULATOR                            -->
+  <!-- ============================================================== -->
+  <div class="modal-overlay" id="modal-ecommerce" role="dialog" aria-modal="true" aria-labelledby="modal-ecommerce-title" hidden>
+    <div class="modal-card neo-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="badge-accent font-mono">PROJECT 01 / 2026</span>
+          <h3 class="modal-title" id="modal-ecommerce-title">E-Commerce Cart &amp; Checkout Flow</h3>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-intro">
+          Test the dynamic client-side state machine and instant discount calculator built for the <strong>ApexSupply</strong> digital storefront.
+        </p>
+
+        <div class="store-demo-container">
+          <div class="store-items-grid">
+            <div class="demo-product-card">
+              <div class="product-icon">⌨️</div>
+              <div class="product-info">
+                <h4>Haptic Keyboard</h4>
+                <p class="price font-mono">$120.00</p>
+              </div>
+              <button class="btn btn-xs btn-outline add-cart-btn" data-id="kb" data-name="Haptic Keyboard" data-price="120">
+                + Add
+              </button>
+            </div>
+
+            <div class="demo-product-card">
+              <div class="product-icon">🎧</div>
+              <div class="product-info">
+                <h4>Studio Monitors</h4>
+                <p class="price font-mono">$80.00</p>
+              </div>
+              <button class="btn btn-xs btn-outline add-cart-btn" data-id="hp" data-name="Studio Monitors" data-price="80">
+                + Add
+              </button>
+            </div>
+
+            <div class="demo-product-card">
+              <div class="product-icon">🖱️</div>
+              <div class="product-info">
+                <h4>Precision Mouse</h4>
+                <p class="price font-mono">$60.00</p>
+              </div>
+              <button class="btn btn-xs btn-outline add-cart-btn" data-id="ms" data-name="Precision Mouse" data-price="60">
+                + Add
+              </button>
+            </div>
+          </div>
+
+          <div class="cart-summary-box neo-card">
+            <div class="cart-summary-header font-mono">
+              <span>ACTIVE CART (<span id="demo-cart-count">2</span>)</span>
+              <button id="clear-demo-cart" class="text-btn">Reset</button>
+            </div>
+            <ul class="cart-items-list" id="demo-cart-items"></ul>
+            <div class="coupon-row">
+              <input type="text" id="coupon-code-input" placeholder="Promo code: DEV2026" class="coupon-input font-mono">
+              <button id="apply-coupon-btn" class="btn btn-xs btn-primary">Apply</button>
+            </div>
+            <div class="cart-totals font-mono">
+              <div class="total-line"><span>Subtotal:</span> <span id="cart-subtotal">$200.00</span></div>
+              <div class="total-line discount-line"><span>Discount (20%):</span> <span id="cart-discount">-$40.00</span></div>
+              <div class="total-line total-final"><span>Total Due:</span> <span id="cart-final">$160.00</span></div>
+            </div>
+            <button id="simulate-checkout-btn" class="btn btn-primary w-full mt-3">
+              ⚡ Execute Instant Mock Checkout
+            </button>
+            <div id="checkout-status-msg" class="checkout-msg font-mono"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL 2: MEDALERT 2-MINUTE ASYNC ESCALATION SIMULATOR         -->
+  <!-- ============================================================== -->
+  <div class="modal-overlay" id="modal-medalert" role="dialog" aria-modal="true" aria-labelledby="modal-medalert-title" hidden>
+    <div class="modal-card neo-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="badge-urgent font-mono">PROJECT 02 / 2026</span>
+          <h3 class="modal-title" id="modal-medalert-title">MedAlert: 2-Min Asynchronous Trigger Simulator</h3>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-intro">
+          Test the automated caretaker escalation protocol. If a patient does not log their medication within <strong>2 minutes (120 seconds)</strong>, an urgent Twilio/WhatsApp webhook escalates to the caretaker.
+        </p>
+
+        <div class="medalert-simulator-box">
+          <div class="sim-patient-profile">
+            <div class="patient-avatar">👤</div>
+            <div class="patient-info">
+              <span class="patient-name">Patient: Marcus Vance (Age 68)</span>
+              <span class="patient-med font-mono">Prescription: Lisinopril 20mg · Scheduled 08:00 AM</span>
+            </div>
+            <div class="patient-status-chip font-mono" id="patient-status-chip">
+              MONITORING DOSE
+            </div>
+          </div>
+
+          <div class="sim-timer-display font-mono">
+            <span class="timer-label">SAFETY WINDOW REMAINING:</span>
+            <div class="timer-countdown" id="sim-countdown">02:00</div>
+            <div class="sim-track">
+              <div class="sim-bar" id="sim-bar" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="sim-controls">
+            <button class="btn btn-outline btn-sm" id="sim-fast-forward-btn">
+              ⏩ Fast-Forward to Expiry (00:00)
+            </button>
+            <button class="btn btn-primary btn-sm" id="sim-patient-ack-btn">
+              ✅ Patient Confirmed Medicine Logged
+            </button>
+            <button class="btn btn-muted btn-sm" id="sim-reset-timer-btn">
+              🔄 Reset Timer
+            </button>
+          </div>
+
+          <div class="whatsapp-mock-phone neo-card" id="whatsapp-mock-phone">
+            <div class="wa-mock-top">
+              <div class="wa-contact-avatar">🚨</div>
+              <div class="wa-contact-meta">
+                <span class="wa-name">MedAlert Caretaker Dispatch</span>
+                <span class="wa-state font-mono">Encrypted WhatsApp Webhook</span>
+              </div>
+            </div>
+            <div class="wa-messages-body" id="wa-messages-body">
+              <div class="wa-msg wa-received">
+                <strong>MedAlert System:</strong> Dose notification sent to patient Marcus Vance at 08:00 AM. Awaiting confirmation within 2 minutes.
+                <span class="wa-time font-mono">08:00 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL 3: SOCIETYPOOL TIER PRICING & AI COPILOT SIMULATOR      -->
+  <!-- ============================================================== -->
+  <div class="modal-overlay" id="modal-societypool" role="dialog" aria-modal="true" aria-labelledby="modal-societypool-title" hidden>
+    <div class="modal-card neo-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="badge-gold font-mono">PROJECT 03 / 2026 </span>
+          <h3 class="modal-title" id="modal-societypool-title">SocietyPool: Dynamic Tier Pricing &amp; AI Copilot</h3>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-intro">
+          Drag the group order volume slider below to observe how the price dynamically drops across volume tiers. Then trigger the <strong>AI Society Copilot</strong> to draft an announcement for neighborhood WhatsApp groups!
+        </p>
+
+        <div class="societypool-demo-grid">
+          <div class="pricing-calculator-box neo-card">
+            <h4 class="box-title font-mono">// STEP-TIER PRICING ENGINE</h4>
+            <div class="item-name-row">
+              <span class="item-title">Alphonso Mango 5kg Crate</span>
+              <span class="base-price font-mono">Base: ₹600 / crate</span>
+            </div>
+
+            <div class="slider-wrapper">
+              <label for="pool-slider" class="slider-label font-mono">
+                <span>COMMUNITY ORDER VOLUME:</span>
+                <strong id="slider-count-display">18 Crates</strong>
+              </label>
+              <input type="range" id="pool-slider" min="1" max="50" value="18" class="pool-range-input">
+              <div class="slider-ticks font-mono">
+                <span>1 (0%)</span>
+                <span>10 (-10%)</span>
+                <span>25 (-20%)</span>
+                <span>40+ (-30%)</span>
+              </div>
+            </div>
+
+            <div class="tier-calculation-result font-mono">
+              <div class="calc-row">
+                <span>Active Volume Tier:</span>
+                <strong id="calc-tier-name" class="highlight-yellow">Tier 2 (-20% Off)</strong>
+              </div>
+              <div class="calc-row">
+                <span>Calculated Unit Price:</span>
+                <strong id="calc-unit-price" class="price-large">₹480</strong>
+              </div>
+              <div class="calc-row savings-row">
+                <span>Collective Society Savings:</span>
+                <strong id="calc-society-savings">₹2,160 saved!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-copilot-box neo-card">
+            <div class="ai-copilot-header font-mono">
+              <span>✨ AI SOCIETY COPILOT</span>
+              <span class="badge-accent">OPENAI API</span>
+            </div>
+            <p class="copilot-desc">
+              Generate a high-converting announcement message for the resident WhatsApp group based on the live order count.
+            </p>
+            <button id="generate-ai-broadcast-btn" class="btn btn-primary btn-sm w-full">
+              ⚡ Generate Live WhatsApp Broadcast Draft
+            </button>
+            <div class="ai-output-box font-mono" id="ai-broadcast-output">
+              Click the button above to generate a tailored broadcast message based on 18 orders.
+            </div>
+            <button id="copy-ai-draft-btn" class="btn btn-outline btn-xs w-full mt-2" disabled>
+              📋 Copy Draft for WhatsApp Group
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL 4: FULL RESUME VIEWER (ATS-FRIENDLY & PRINTABLE)       -->
+  <!-- ============================================================== -->
+  <div class="modal-overlay" id="modal-resume" role="dialog" aria-modal="true" aria-labelledby="modal-resume-title" hidden>
+    <div class="modal-card neo-card resume-modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="badge-accent font-mono">CURRICULUM VITAE</span>
+          <h3 class="modal-title" id="modal-resume-title">Kartik Goyal — Résumé</h3>
+        </div>
+        <div class="resume-modal-actions">
+          <a href="resume.pdf" download="Kartik_Goyal_Resume_2026.pdf" class="btn btn-primary btn-xs">
+            Download PDF
+          </a>
+          <button id="print-resume-btn" class="btn btn-outline btn-xs">
+            Print
+          </button>
+          <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body printable-resume" id="resume-printable-area">
+        <div class="resume-sheet">
+          <header class="resume-sheet-header">
+            <h1 class="resume-sheet-name">Kartik Goyal</h1>
+            <p class="resume-sheet-role">Full-Stack &amp; AI Developer</p>
+            <div class="resume-sheet-contact font-mono">
+              <span>goyalkartik208@gmail.com</span> · 
+              <span>Bareilly, India (Open to Remote Worldwide)</span> · 
+              <span>github.com/kartikgoyal</span> · 
+              <span>linkedin.com/in/kartikgoyal</span>
+            </div>
+          </header>
+
+          <section class="resume-section">
+            <h2 class="resume-section-title font-mono">PROFESSIONAL SUMMARY</h2>
+            <p class="resume-summary-text">
+              Passionate engineer specializing in backend systems, automated real-time alerts, AI-driven tools, and mobile-responsive web applications. Experienced in architecting asynchronous queue workers, Twilio/WhatsApp webhook pipelines, and responsive Next.js/React digital storefronts.
+            </p>
+          </section>
+
+          <section class="resume-section">
+            <h2 class="resume-section-title font-mono">FEATURED 2026 PROJECTS</h2>
+            
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <strong>SocietyPool — Hyperlocal Group-Buying &amp; AI Copilot</strong>
+                <span class="resume-date font-mono">03 / 2026</span>
+              </div>
+              <div class="resume-badge-sub">🏆 Hackathon Featured Project · Next.js, OpenAI API, Node.js, WhatsApp Automation</div>
+              <ul class="resume-bullet-list">
+                <li>Engineered dynamic tier-based step-pricing algorithm enabling neighborhood communities to pool collective volume for up to 30% discounts.</li>
+                <li>Built integrated AI Society Copilot using OpenAI API to automatically draft engaging group announcements and WhatsApp broadcast messages.</li>
+                <li>Implemented two-way WhatsApp automation for order placement, instant payment verification, and delivery coordination.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <strong>MedAlert — Real-Time Healthcare Escalation System</strong>
+                <span class="resume-date font-mono">02 / 2026</span>
+              </div>
+              <div class="resume-badge-sub">JavaScript, Node.js, WhatsApp API, Twilio, Async Timers</div>
+              <ul class="resume-bullet-list">
+                <li>Architected non-blocking asynchronous timer scheduler monitoring critical medication intake windows.</li>
+                <li>Engineered automated WhatsApp Caretaker Escalation pipeline triggering in under 2 minutes if patient does not log medicine.</li>
+                <li>Integrated Twilio SMS and phone call failover fallbacks to guarantee medical alert delivery with 99.98% reliability.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <strong>Full-Stack E-Commerce Platform</strong>
+                <span class="resume-date font-mono">01 / 2026</span>
+              </div>
+              <div class="resume-badge-sub">React, Node.js, Express, MongoDB, Tailwind CSS</div>
+              <ul class="resume-bullet-list">
+                <li>Developed production digital storefront featuring dynamic cart state management, checkout flows, and inventory decrements.</li>
+                <li>Implemented secure user authentication with JWT, bcrypt password hashing, and role-based permissions for admin inventory.</li>
+                <li>Optimized mobile touch responsiveness and Lighthouse performance metrics to 98+ across desktop and mobile devices.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="resume-section">
+            <h2 class="resume-section-title font-mono">TECHNICAL SKILLS</h2>
+            <div class="resume-skills-block">
+              <p><strong>Languages &amp; Frontend:</strong> JavaScript (ES2026), TypeScript, React, Next.js, Tailwind CSS, HTML5, CSS3</p>
+              <p><strong>Backend &amp; Databases:</strong> Node.js, Express.js, MongoDB, PostgreSQL, RESTful Architecture</p>
+              <p><strong>APIs &amp; Automation:</strong> OpenAI API, Twilio API, WhatsApp Cloud API, Async Timers, Webhooks</p>
+              <p><strong>DevOps &amp; Tooling:</strong> Git, GitHub Actions, Vercel, Netlify, Docker, Postman</p>
+            </div>
+          </section>
+
+          <section class="resume-section">
+            <h2 class="resume-section-title font-mono">EDUCATION</h2>
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <strong>Bachelor of Engineering in Computer Science</strong>
+                <span class="resume-date font-mono">2026 – 2030</span>
+              </div>
+              <p class="resume-edu-sub">First Class with Distinction · Focus on Distributed Systems &amp; Web Architectures</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

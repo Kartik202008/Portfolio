@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimalist Mobile-First Developer Portfolio",
+  "scripts": {
+    "dev": "npx -y serve -l 5173 .",
+    "start": "npx -y serve -l 5173 .",
+    "open": "open http://localhost:4200"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "mobile-first",
+    "cream-grid"
+  ],
+  "author": "Alex Rivera",
+  "license": "MIT"
+}

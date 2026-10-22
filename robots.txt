@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kartikgoyal.dev/sitemap.xml

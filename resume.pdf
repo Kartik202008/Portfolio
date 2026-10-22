@@ -1,0 +1,105 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2380 >>
+stream
+BT
+/F1 20 Tf
+50 745 Td
+(KARTIK GOYAL) Tj
+/F2 10.5 Tf
+0 -17 Td
+(Full-Stack & AI Developer | Gurugram, India | goyalkartik208@gmail.com) Tj
+/F2 9.5 Tf
+0 -13 Td
+(github.com/kartikgoyal | linkedin.com/in/kartikgoyal | Specializing in AI Retrieval & Agent Systems) Tj
+0 -23 Td
+/F1 11.5 Tf
+(PROFESSIONAL SUMMARY) Tj
+/F2 9 Tf
+0 -13 Td
+(Passionate engineer specializing in backend systems, automated real-time alerts, AI-driven tools, and) Tj
+0 -13 Td
+(mobile-responsive web applications. Experienced in async queues, WhatsApp/Twilio webhooks, and React/Next.js.) Tj
+0 -21 Td
+/F1 11.5 Tf
+(FEATURED 2026 PROJECTS) Tj
+/F1 9.5 Tf
+0 -15 Td
+(1. SocietyPool - AI Hyperlocal Group-Buying Platform [Hackathon Winner] \(03/2026\)) Tj
+/F2 9 Tf
+0 -12 Td
+(- Built dynamic step-function tier pricing algorithms unlocking up to 30% group discounts.) Tj
+0 -12 Td
+(- Integrated OpenAI API Society Copilot for instant community booking drafts and WhatsApp announcements.) Tj
+0 -12 Td
+(- Tech: Next.js, OpenAI API, Node.js, WhatsApp Automation) Tj
+/F1 9.5 Tf
+0 -15 Td
+(2. MedAlert - Automated Healthcare Escalation System \(02/2026\)) Tj
+/F2 9 Tf
+0 -12 Td
+(- Architected async timer scheduler managing non-blocking patient dose intake windows.) Tj
+0 -12 Td
+(- Automated WhatsApp Caretaker Escalation pipeline triggering in < 2 minutes if medicine unlogged.) Tj
+0 -12 Td
+(- Tech: JavaScript, Node.js, WhatsApp API, Twilio, Async Timers) Tj
+/F1 9.5 Tf
+0 -15 Td
+(3. Full-Stack E-Commerce Platform \(01/2026\)) Tj
+/F2 9 Tf
+0 -12 Td
+(- Production storefront with reactive cart state management, checkout flows, and inventory decrements.) Tj
+0 -12 Td
+(- Implemented JWT token authentication with bcrypt hashing and RBAC admin controls.) Tj
+0 -12 Td
+(- Tech: React, Node.js, Express, MongoDB, Tailwind CSS) Tj
+0 -21 Td
+/F1 11.5 Tf
+(TECHNICAL SKILLS) Tj
+/F2 9 Tf
+0 -13 Td
+(Languages & Frontend: JavaScript \(ES2026\), TypeScript, React, Next.js, HTML5, CSS3, Tailwind CSS) Tj
+0 -13 Td
+(Backend & Database: Node.js, Express.js, MongoDB, PostgreSQL, RESTful APIs, Redis) Tj
+0 -13 Td
+(APIs & Automation: OpenAI API, Twilio API, WhatsApp Cloud API, Async Timers, Webhooks) Tj
+0 -13 Td
+(DevOps & Tools: Git, GitHub Actions, Vercel, Netlify, Docker, Postman, Linux CLI) Tj
+0 -21 Td
+/F1 11.5 Tf
+(EDUCATION) Tj
+/F2 9 Tf
+0 -13 Td
+(B.E. in Computer Science & Engineering \(2026 - 2030\) - First Class with Distinction) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000002683 00000 n 
+0000002758 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2828
+%%EOF
