@@ -637,6 +637,40 @@ button, input, select, textarea {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-card);
   cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.social-chip.social-chip-linkedin {
+  background-color: #0A66C2 !important;
+  color: #FFFFFF !important;
+  border-color: #0A66C2 !important;
+}
+
+.social-chip.social-chip-linkedin svg {
+  fill: #FFFFFF !important;
+}
+
+.social-chip.social-chip-linkedin:hover {
+  background-color: #004182 !important;
+  transform: translateY(-1px);
+}
+
+.social-chip.social-chip-github {
+  background-color: #24292F !important;
+  color: #FFFFFF !important;
+  border-color: #24292F !important;
+}
+
+.social-chip.social-chip-github svg {
+  fill: #FFFFFF !important;
+}
+
+.social-chip.social-chip-github:hover {
+  background-color: #0D1117 !important;
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -1679,19 +1713,97 @@ button, input, select, textarea {
 .social-btn {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 0.9rem;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
   background: var(--bg-surface);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--radius-card);
   box-shadow: 2px 2px 0px var(--border-color);
   font-size: 0.8125rem;
   font-weight: 700;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.social-btn svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .social-btn:hover {
   background: var(--accent-yellow);
   color: #161616;
   transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-color);
+}
+
+/* Official LinkedIn Brand Button */
+.social-btn.social-btn-linkedin {
+  background-color: #0A66C2 !important;
+  color: #FFFFFF !important;
+  border-color: #0A66C2 !important;
+  box-shadow: 2px 2px 0px #161616 !important;
+}
+
+.social-btn.social-btn-linkedin svg {
+  fill: #FFFFFF !important;
+}
+
+.social-btn.social-btn-linkedin:hover {
+  background-color: #004182 !important;
+  color: #FFFFFF !important;
+  border-color: #004182 !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #161616 !important;
+}
+
+/* Official GitHub Brand Button */
+.social-btn.social-btn-github {
+  background-color: #24292F !important;
+  color: #FFFFFF !important;
+  border-color: #24292F !important;
+  box-shadow: 2px 2px 0px #161616 !important;
+}
+
+.social-btn.social-btn-github svg {
+  fill: #FFFFFF !important;
+}
+
+.social-btn.social-btn-github:hover {
+  background-color: #0D1117 !important;
+  color: #FFFFFF !important;
+  border-color: #0D1117 !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #161616 !important;
+}
+
+/* Dark mode overrides for branded social buttons */
+[data-theme="dark"] .social-btn.social-btn-linkedin {
+  background-color: #0A66C2 !important;
+  color: #FFFFFF !important;
+  border-color: #0A66C2 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+[data-theme="dark"] .social-btn.social-btn-linkedin:hover {
+  background-color: #004182 !important;
+  border-color: #004182 !important;
+  box-shadow: 3px 3px 0px var(--accent-yellow) !important;
+}
+
+[data-theme="dark"] .social-btn.social-btn-github {
+  background-color: #24292F !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+[data-theme="dark"] .social-btn.social-btn-github:hover {
+  background-color: #161B22 !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 3px 3px 0px var(--accent-yellow) !important;
 }
 
 /* Contact Form */
@@ -2819,12 +2931,13 @@ button, input, select, textarea {
   color: var(--text-primary);
 }
 
-/* Profile Photo Frame */
+/* Profile Photo Frame - Expanded to fill the ID card body */
 .id-badge-photo-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  max-height: 175px;
+  aspect-ratio: 4 / 5;
+  height: 300px;
+  max-height: 330px;
   background-color: var(--bg-card-subtle);
   border: var(--border-thick) solid var(--border-color);
   border-radius: 10px;
@@ -2954,49 +3067,6 @@ button, input, select, textarea {
   color: var(--text-primary);
 }
 
-/* Minimalist Barcode & QR Graphic at bottom */
-.id-badge-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  border-top: 1.5px solid var(--border-color);
-  padding-top: 0.65rem;
-}
-
-.barcode-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.barcode-svg {
-  width: 100%;
-  height: 24px;
-  color: var(--text-primary);
-}
-
-.barcode-num {
-  font-size: 0.5625rem;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin-top: 0.15rem;
-  text-align: center;
-}
-
-.qr-stamp-box {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-card-subtle);
-  border: 1.5px solid var(--border-color);
-  border-radius: 4px;
-  color: var(--text-primary);
-  flex-shrink: 0;
-}
-
 /* Holographic Authenticity Seal */
 .id-badge-seal {
   margin-top: 0.5rem;
@@ -3021,7 +3091,9 @@ button, input, select, textarea {
   }
 
   .id-badge-photo-wrapper {
-    max-height: 150px;
+    height: 270px;
+    max-height: 290px;
+    aspect-ratio: 4 / 5;
   }
 
   .id-badge-name {
