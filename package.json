@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx -y serve -l 5173 .",
     "start": "npx -y serve -l 5173 .",
-    "open": "open http://localhost:4200"
+    "open": "open http://localhost:4200",
+    "deploy": "npx -y vercel --prod"
   },
   "keywords": [
     "portfolio",
@@ -14,6 +15,6 @@
     "mobile-first",
     "cream-grid"
   ],
-  "author": "Alex Rivera",
+  "author": "Kartik Goyal",
   "license": "MIT"
 }
